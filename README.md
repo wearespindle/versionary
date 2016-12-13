@@ -1,5 +1,7 @@
 # Versionary
 
+[![Build Status](https://travis-ci.org/wearespindle/versionary.svg?branch=develop)](https://travis-ci.org/wearespindle/versionary)
+
 Package that allows to version code paths with the use of a decorator.
 
 ## Status
@@ -11,7 +13,7 @@ Currently actively used and watched.
 ### Requirements
 
  * python 2.7
- * python >= 3.3
+ * python 3.3, 3.4, 3.5
 
 ### Installation
 
