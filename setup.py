@@ -28,5 +28,8 @@ setup(
     license=versionary.__license__,
     install_requires=install_requires,
     tests_require=tests_require,
+    extras_require={
+        'test': tests_require,
+    },
     packages=find_packages(exclude=['contrib', 'docs', 'tests']),
 )
