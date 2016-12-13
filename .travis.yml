@@ -11,4 +11,4 @@ install:
   - pip install -e .[test]
 
 script:
-  - py.test --cov=versionary --cov-report term-missing --flake8 -vvv
+  - py.test --cov=versionary --cov-fail-under=100 --cov-report term-missing --flake8 -vvv
