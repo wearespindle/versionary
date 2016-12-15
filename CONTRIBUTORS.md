@@ -1,7 +1,7 @@
-# Contributers
+# Contributors
 We would like to thank everyone on this list for contributing to this project!
 
-Contributers can add themselves to the list by using to following format:
+Contributors can add themselves to the list by using to following format:
 
     John Doe {johndoe@nobody.tld}
 
