@@ -61,9 +61,9 @@ validate correct use of the decorator in the given module.
 
 See the [CONTRIBUTING.md](CONTRIBUTING.md) file on how to contribute to this project.
 
-## Contributers
+## Contributors
 
-See the [CONTRIBUTERS.md](CONTRIBUTERS.md) file for a list of contributers to the project.
+See the [CONTRIBUTORS.md](CONTRIBUTORS.md) file for a list of contributors to the project.
 
 ## Roadmap
 
