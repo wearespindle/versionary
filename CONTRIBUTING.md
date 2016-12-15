@@ -19,7 +19,7 @@ You want to help out by contributing code? Here's a checklist for a pull request
  * Write your awesome code;
  * Adhere to the coding style guide. We use flake8 to check the rules of [pep8](https://www.python.org/dev/peps/pep-0008/);
  * Make sure all tests pass by running py.test;
- * Don't forget to add yourself to the [CONTRIBUTORS.md](CONTRIBUTORS.md) file;
+ * Don't forget to add yourself to the [CONTRIBUTORS.md](https://github.com/wearespindle/versionary/blob/develop/CONTRIBUTORS.md) file;
  * Squash commits and provide a sane commit message;
  * Create a pull request;
  * Write a descriptive title;

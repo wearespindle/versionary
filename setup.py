@@ -4,8 +4,13 @@ import versionary
 
 
 # Get the long description from the README file.
-with open('README.md') as f:
-    long_description = f.read()
+# For upload to pypi convert readme to rst.
+try:
+    import pypandoc
+    long_description = pypandoc.convert('README.md', 'rst')
+except:
+    long_description = ''
+
 
 install_requires = [
     'six>=1.9.0',
@@ -32,4 +37,26 @@ setup(
         'test': tests_require,
     },
     packages=find_packages(exclude=['contrib', 'docs', 'tests']),
+
+    keyword='versioning version versioned',
+    classifiers=[
+        # Status.
+        'Development Status :: 3 - Alpha',
+
+        # Audience.
+        'Intended Audience :: Developers',
+
+        # License.
+        'License :: OSI Approved :: MIT License',
+
+        # Programming languages.
+        'Programming Language :: Python :: 2.7',
+        'Programming Language :: Python :: 3.3',
+        'Programming Language :: Python :: 3.4',
+        'Programming Language :: Python :: 3.5',
+
+        # Topic.
+        'Topic :: Software Development :: Version Control',
+    ],
+
 )
