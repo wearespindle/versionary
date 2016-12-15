@@ -67,6 +67,10 @@ See the [CONTRIBUTERS.md](CONTRIBUTERS.md) file for a list of contributers to th
 
 ## Roadmap
 
+### Changelog
+
+The changelog can be found in the [CHANGELOG.md](CHANGELOG.md) file.
+
 ### In progress
 
  * Minor improvements
