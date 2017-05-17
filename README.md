@@ -17,8 +17,9 @@ Currently actively used and watched.
 
 ### Installation
 
-Currently installing from github is the only way. Will be on PyPI in
-the near future.
+```
+pip install versionary
+```
 
 ### Running
 
@@ -59,17 +60,17 @@ validate correct use of the decorator in the given module.
 
 ## Contributing
 
-See the [CONTRIBUTING.md](CONTRIBUTING.md) file on how to contribute to this project.
+See the [CONTRIBUTING.md](https://github.com/wearespindle/versionary/blob/develop/CONTRIBUTING.md) file on how to contribute to this project.
 
 ## Contributors
 
-See the [CONTRIBUTORS.md](CONTRIBUTORS.md) file for a list of contributors to the project.
+See the [CONTRIBUTORS.md](https://github.com/wearespindle/versionary/blob/develop/CONTRIBUTORS.md) file for a list of contributors to the project.
 
 ## Roadmap
 
 ### Changelog
 
-The changelog can be found in the [CHANGELOG.md](CHANGELOG.md) file.
+The changelog can be found in the [CHANGELOG.md](https://github.com/wearespindle/versionary/blob/develop/CHANGELOG.md) file.
 
 ### In progress
 
@@ -81,6 +82,6 @@ The changelog can be found in the [CHANGELOG.md](CHANGELOG.md) file.
 
 ## Get in touch with a developer
 
-If you want to report an issue see the [CONTRIBUTING.md](CONTRIBUTING.md) file for more info.
+If you want to report an issue see the [CONTRIBUTING.md](https://github.com/wearespindle/versionary/blob/develop/CONTRIBUTING.md) file for more info.
 
 We will be happy to answer your other questions at opensource@wearespindle.com
