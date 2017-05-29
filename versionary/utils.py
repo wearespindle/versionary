@@ -81,7 +81,7 @@ def create_proxy_class(base_name):
                 raise InvalidVersionException(message)
 
             raise AttributeError('%r has no attribute %r' %
-                                 (cls._proxied_member_name, name))
+                                 (cls._base_name, name))
 
     setattr(ProxyType, '_base_name', base_name)
 
