@@ -89,7 +89,6 @@ def create_proxy_class(base_name):
         """
         ProxyClass that holds all the versions for a certain class or function.
         """
-        __metaclass__ = ProxyType
         _is_versioned = True
 
         def __init__(self):
