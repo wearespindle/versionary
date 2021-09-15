@@ -57,6 +57,36 @@ two = my_func.v2()
 You can use the validate_module function from versionary.utils to
 validate correct use of the decorator in the given module.
 
+You can also call the `latest` method to always get the highest-numbered version:
+
+```python
+@versioned(1)
+    class Foo:
+        def __init__(self, passedin=None):
+            self.local_thing = passedin
+
+        def cls_mthd():
+            return "Foo version 1"
+        
+        def rad(self):
+            return f"dad: {self.local_thing}"
+
+    @versioned(2)
+    class Foo:
+        def __init__(self, passedin=None):
+            self.local_thing = passedin
+
+        def cls_mthd():
+            return "Foo version 2"
+
+        def rad(self):
+            return f"racer: {self.local_thing}"
+    
+Foo.v1("bod").rad() == "dad: bod"
+Foo.v2("car").rad() == "racer: car"
+Foo.latest("speed").rad() == "racer: speed"
+```
+
 
 ## Contributing
 

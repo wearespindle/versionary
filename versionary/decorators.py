@@ -126,5 +126,11 @@ def versioned(number=None):
         version_members['members'][version] = member
         setattr(module, '__version_table__', version_table)
 
+        def latest(cls, *args, **kwargs):
+            v = sorted([x for x in cls.__dict__.keys() if len(x) > 1 and x[0] == "v" and x[1].isnumeric()])[-1]
+            return (getattr(cls, v)(*args, **kwargs))
+
+        setattr(proxy, 'latest', classmethod(latest))
+
         return proxy
     return wrap

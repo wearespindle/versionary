@@ -161,3 +161,36 @@ def test_invalid_number_type():
             return 1
 
     assert str(excinfo.value) == message
+
+def test_latest():
+    """
+    Test using the latest() function
+    """
+
+    @versioned(1)
+    class Foo:
+        def __init__(self, passedin=None):
+            self.local_thing = passedin
+
+        def cls_mthd():
+            return "Foo version 1"
+        
+        def rad(self):
+            return f"dad: {self.local_thing}"
+
+    @versioned(2)
+    class Foo:
+        def __init__(self, passedin=None):
+            self.local_thing = passedin
+
+        def cls_mthd():
+            return "Foo version 2"
+
+        def rad(self):
+            return f"racer: {self.local_thing}"
+    
+    assert Foo.v1("bod").rad() == "dad: bod"
+    assert Foo.v2("car").rad() == "racer: car"
+    assert Foo.latest("speed").rad() == "racer: speed"
+    assert Foo.latest().__class__.cls_mthd() == "Foo version 2"
+    
