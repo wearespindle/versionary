@@ -116,7 +116,7 @@ def versioned(number=None):
             validate_inheritance_for_class(member)
 
         # Get or create the proxy class to return.
-        proxy = version_members.get('proxy', create_proxy_class(name))
+        proxy = version_members.get('proxy', create_proxy_class(name, module))
 
         # Add new version method to this proxy class.
         setattr(proxy, '%s%s' % (PROXY_VERSION_TAG, version), staticmethod(member))

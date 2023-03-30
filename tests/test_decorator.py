@@ -1,7 +1,7 @@
 from pytest import raises
 
 from versionary.decorators import versioned
-from versionary.exceptions import DuplicateVersionException, InheritanceException, InvalidVersionException
+from versionary.exceptions import DuplicateVersionException, InheritanceException, InvalidVersionException, NoApplicableVersion
 
 from .utils.mixed_members import MixedClass, mixed_func
 from .utils.versioned_members import MyClass, MyInheritanceClass, my_function, your_function
@@ -22,6 +22,27 @@ def test_decorator_for_classes_without_number():
     """
     assert MyClass.v1().hello() == 3
     assert MyClass.v2().hello() == 4
+
+
+def test_decorator_for_classes_get_applicable_max():
+    """
+    Test the decorator for latest classes via get_applicable.
+    """
+    assert MyClass.get_applicable()().hello() == 4
+    assert MyClass.get_applicable(minver=2)().hello() == 4
+    assert MyClass.get_applicable(maxver=1)().hello() == 3
+    with raises(NoApplicableVersion):
+        MyClass.get_applicable(minver=100)().hello()
+
+def test_decorator_for_classes_get_applicable_min():
+    """
+    Test the decorator for earliest classes via get_applicable.
+    """
+    assert MyClass.get_applicable(func=min)().hello() == 3
+    assert MyClass.get_applicable(minver=2, func=min)().hello() == 4
+    assert MyClass.get_applicable(maxver=1, func=min)().hello() == 3
+    with raises(NoApplicableVersion):
+        MyClass.get_applicable(minver=100, func=min)().hello()
 
 
 def test_decorator_for_class_inheritance_without_number():

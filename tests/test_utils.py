@@ -29,7 +29,7 @@ def test_create_proxy_class():
     """
     base_name = 'base_name'
 
-    proxy = create_proxy_class(base_name)
+    proxy = create_proxy_class(base_name, 123)
 
     message = 'Cannot call `base_name` directly, use versioned attributes instead (`base_name`.vX)'
 
