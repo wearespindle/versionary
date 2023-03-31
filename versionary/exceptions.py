@@ -41,3 +41,10 @@ class NotCallableException(Exception):
     Raised when trying to call the ProxyClass which shouldn't be called.
     """
     pass
+
+
+class NoApplicableVersion(Exception):
+    """
+    Raised when no version matching the criteria was found.
+    """
+    pass

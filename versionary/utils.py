@@ -4,7 +4,7 @@ import re
 
 from six import with_metaclass
 
-from .exceptions import InvalidVersionException, NotCallableException
+from .exceptions import InvalidVersionException, NotCallableException, NoApplicableVersion
 
 CLASS, FUNCTION = 0, 1
 CLASS_VERSION_TAG = 'V'
@@ -37,7 +37,7 @@ def determine_member_type(member):
     return member_type
 
 
-def create_proxy_class(base_name):
+def create_proxy_class(base_name, mod):
     """
     Function to create a proxy class to be able to set attributes to.
     This is used to make my_func.v1() or MyClass.v1() possible.
@@ -83,7 +83,17 @@ def create_proxy_class(base_name):
             raise AttributeError('%r has no attribute %r' %
                                  (cls._base_name, name))
 
+        def get_applicable(cls, minver=0, maxver=10e9, func=max):
+            version_table = getattr(cls._modref, '__version_table__')
+            try:
+                best_version = func([x for x in version_table[cls._base_name]
+                                   ['members'].keys() if x <= maxver and x >= minver])
+                return version_table[cls._base_name]['members'][best_version]
+            except ValueError:
+                raise NoApplicableVersion()
+
     setattr(ProxyType, '_base_name', base_name)
+    setattr(ProxyType, '_modref', mod)
 
     class ProxyClass(with_metaclass(ProxyType)):
         """

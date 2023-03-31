@@ -11,3 +11,5 @@ Keep the list in alfabetical order please.
 
  * Devhouse Spindle {opensource@wearespindle.com}
  * Marco Vellinga {info@itstars.nl}
+ * Konrad Weihmann {kweihmann@outlook.com}
+
